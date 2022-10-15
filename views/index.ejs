@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <a class="link" href="/new">Add new message</a>
+    </div>
+    <div class="messages">
+      <% if (messages.length > 0) { %> <% messages.forEach(message => { %>
+      <div class="messages-box">
+        <h1><%= message.text %></h1>
+        <h3><%= message.user %></h3>
+        <p><%= message.added.toLocaleString() %></p>
+      </div>
+      <% }); %> <% } else { %>
+      <h1>There is no messages</h1>
+      <% } %>
+    </div>
+  </body>
+</html>
